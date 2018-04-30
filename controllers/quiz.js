@@ -153,3 +153,20 @@ exports.check = (req, res, next) => {
         answer
     });
 };
+
+// GET /quizzes/randomplay
+exports.randomplay = (req,res,next) =>{
+    // editar para que quizId sea random
+    const quizId = 4;
+    models.quiz.findById(quizId)
+        .then(function (quiz) {
+            if(quiz){
+                res.render('quizzes/random_play',{quiz});
+            }else{
+                throw new Error ('No hay quiz con ese id '+quizId);
+            }
+        })
+        .catch(function (error) {
+            next(error);
+        });
+};
