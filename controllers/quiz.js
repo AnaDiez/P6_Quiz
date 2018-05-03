@@ -156,17 +156,56 @@ exports.check = (req, res, next) => {
 
 // GET /quizzes/randomplay
 exports.randomplay = (req,res,next) =>{
-    // editar para que quizId sea random
-    const quizId = 4;
-    models.quiz.findById(quizId)
+    req.session.randomPlay = req.session.randomPlay || [];
+
+    const whereOpt = {'id':{[Sequelize.Op.notIn]: req.session.randomPlay}};
+
+    models.quiz.count({where:whereOpt})
+        .then(function (count) {
+            if(!count){
+                const score = req.session.randomPlay.length;
+                req.session.randomPlay = [];
+                res.render('quizzes/random_nomore',{
+                    score:score
+                });
+            };
+            return models.quiz.findAll({
+                where: whereOpt,
+                offset: Math.floor(Math.random()*count),
+                limit: 1
+            })
+                .then(function (quizzes) {
+                    return quizzes[0];
+
+                });
+
+        })
         .then(function (quiz) {
-            if(quiz){
-                res.render('quizzes/random_play',{quiz});
-            }else{
-                throw new Error ('No hay quiz con ese id '+quizId);
-            }
+            res.render('quizzes/random_play',{
+                quiz: quiz,
+                score: req.session.randomPlay.length
+            });
+
         })
         .catch(function (error) {
             next(error);
         });
+};
+
+exports.randomcheck = (req, res, next) => {
+
+    const {quiz, query} = req;
+
+    const answer = query.answer || "";
+    const result = answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim();
+
+    if(result){
+        req.session.randomPlay = req.session.randomPlay.concat(quiz.id);
+    }
+    const score = req.session.randomPlay.length;
+    res.render('quizzes/random_result', {
+        result,
+        answer,
+        score
+    });
 };
