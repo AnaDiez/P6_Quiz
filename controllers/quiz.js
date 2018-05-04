@@ -200,7 +200,9 @@ exports.randomcheck = (req, res, next) => {
     const result = answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim();
 
     if(result){
-        req.session.randomPlay = req.session.randomPlay.concat(quiz.id);
+        if(req.session.randomPlay.indexOf(req.quiz.id)=== -1){
+            req.session.randomPlay = req.session.randomPlay.concat(quiz.id);
+        }
     }
     const score = req.session.randomPlay.length;
     res.render('quizzes/random_result', {
