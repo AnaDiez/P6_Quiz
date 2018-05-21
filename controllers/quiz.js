@@ -9,7 +9,7 @@ exports.load = (req, res, next, quizId) => {
 
     models.quiz.findById(quizId, {
         include: [
-            models.tip,
+            models.tip,//Meter aquí un include con el autor del tip
             {model: models.user, as: 'author'}
         ]
     })

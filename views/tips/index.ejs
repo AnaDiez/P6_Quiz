@@ -11,6 +11,7 @@
 
             <li>
                 <%= tip.text %>
+                (by <span class="autor"><%= tip.author %></span>) <!--Intento de meter el autor del tip-->
 
                 <% if (!accepted && (isAdmin || isQuizAuthor)) { %>
 
