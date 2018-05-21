@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6289f086-b470-48a4-b9aa-d10fff9d11eb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/20180519155259-AddAuthorIdToTipsTable.js" />
-      <change beforePath="$PROJECT_DIR$/controllers/quiz.js" afterPath="$PROJECT_DIR$/controllers/quiz.js" />
-      <change beforePath="$PROJECT_DIR$/controllers/tip.js" afterPath="$PROJECT_DIR$/controllers/tip.js" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" afterPath="$PROJECT_DIR$/models/index.js" />
-      <change beforePath="$PROJECT_DIR$/views/tips/index.ejs" afterPath="$PROJECT_DIR$/views/tips/index.ejs" />
-    </list>
+    <list default="true" id="6289f086-b470-48a4-b9aa-d10fff9d11eb" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -192,15 +185,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526922326648</updated>
-      <workItem from="1526922330176" duration="994000" />
+      <workItem from="1526922330176" duration="1276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="994000" />
+    <option name="totallyTimeSpent" value="1276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23288691" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
