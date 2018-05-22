@@ -29,6 +29,7 @@
     "express-flash": "0.0.2",
     "express-partials": "^0.3.0",
     "express-session": "^1.15.6",
+    "heroku": "^7.0.17",
     "method-override": "^2.3.10",
     "morgan": "~1.9.0",
     "pg": "7.4.0",
