@@ -41,8 +41,7 @@ exports.create = (req, res, next) => {
         {
             text: req.body.text,
             quizId: req.quiz.id,
-            author: req.session.user.name //OP 1
-            // authorId: req.session.user.id OP 2
+            authorId: req.session.user && req.session.user.id //Por si req.session.user esta undefined
         });
 
     tip.save()
