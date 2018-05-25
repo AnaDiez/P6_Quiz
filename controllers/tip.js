@@ -117,13 +117,12 @@ exports.edit = (req, res, next) => {
 
 // PUT /quizzes/:quizId/tips/:tipId
 exports.update = (req, res, next) => {
-    // Erores aquiiii
+
     const {quiz, body, tip} = req;
 
     tip.text = body.text;
-    tip.author = body.author;
     tip.accepted = false;
-    tip.save({fields: ["text", "author","accepted"]})
+    tip.save({fields: ["text","accepted"]})
         .then(tip => {
             req.flash('success', 'Tip edited successfully.');
             res.redirect('/quizzes/' + quiz.id );

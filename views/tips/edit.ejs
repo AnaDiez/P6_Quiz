@@ -2,10 +2,6 @@
 <h1>
     Edit tip:
 </h1>
-<!--Error
-He probado:
-quizId: quizId not defined
-quiz.id: quiz not defined-->
 
 <form method="post" action="/quizzes/<%= quiz.id %>/tips/<%= tip.id %>?_method=PUT" >
     <% include _formtip.ejs %>
